@@ -12,11 +12,9 @@ const products = [
 const calculateTotalPrice = function (allProdcuts, productName) {
   // твой код
   let totalProduct = 0;
-  for (const product of allProdcuts) {
-    let name = product.name;
-
+  for (const { name, price, quantity } of allProdcuts) {
     if (productName === name) {
-      totalProduct += product.price * product.quantity;
+      totalProduct += price * quantity;
     }
   }
   return totalProduct;
